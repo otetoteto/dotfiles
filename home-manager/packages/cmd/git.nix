@@ -13,7 +13,7 @@
     aliases = {
       br = "branch";
       co = "commit";
-      cmend = "commit --amend";
+      comend = "commit --amend";
       sw = "switch";
       st = "status";
       pl = "pull";
@@ -37,6 +37,7 @@
       core = {
         quotepath = false;
         pager = "delta";
+        editor = "code --wait";
       };
 
       push = {
