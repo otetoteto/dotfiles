@@ -9,6 +9,10 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*default' menu select=1
 
+function chpwd() {
+	lsd
+}
+
 function move_ghq() {
 	local selected_dir=$(ghq list -p | fzf)
 	if [[ -n "$selected_dir" ]]; then
