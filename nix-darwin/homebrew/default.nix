@@ -7,6 +7,10 @@
       cleanup = "uninstall";
     };
 
+    brews = [
+      "poppler"
+    ];
+
     casks = [
       "alt-tab"
       "claude"
