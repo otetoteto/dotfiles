@@ -12,6 +12,7 @@
 
     aliases = {
       br = "branch";
+      ch = "checkout";
       co = "commit";
       comend = "commit --amend";
       sw = "switch";
@@ -25,8 +26,8 @@
       unstage = "restore --staged";
       phf = "push --force-with-lease --force-if-includes";
       lt = "log --pretty=format:'%Cgreen[%cd] %Cblue%h %Cred<%cn> %Creset%s' --date=short --decorate --graph --branches --tags --remotes";
-      swl = "!git branch --format=\"%(refname:short)\" | fzf | xargs git switch";
-      rml = "!git branch --format=\"%(refname:short)\" | fzf | xargs git branch -D";
+      swl = "!git branch --format=\"%(refname:short)\" | fzf --preview '' | xargs git switch";
+      rml = "!git branch --format=\"%(refname:short)\" | fzf --preview '' | xargs git branch -D";
     };
 
     ignores = [

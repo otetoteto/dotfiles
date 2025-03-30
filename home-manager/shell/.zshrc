@@ -1,6 +1,8 @@
 alias cl='clear'
-alias fzf='fzf --layout=reverse --cycle'
 alias relogin='exec $SHELL -l'
+alias -g NOERR='2>/dev/null'
+
+export FZF_DEFAULT_OPTS="--height 70% --border --cycle --reverse --inline-info --preview-window=down --preview 'bat --style=numbers --color=always {} 2>/dev/null || echo {}'"
 
 eval "$(sheldon source)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
