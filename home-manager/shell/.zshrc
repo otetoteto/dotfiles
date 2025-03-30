@@ -16,7 +16,7 @@ function chpwd() {
 }
 
 function move_ghq() {
-	local selected_dir=$(ghq list -p | fzf)
+	local selected_dir=$(ghq list -p | fzf --preview 'bat --style=numbers --color=always {}/README.md 2>/dev/null || echo "{} has no README.md"')
 	if [[ -n "$selected_dir" ]]; then
 		BUFFER="cd ${selected_dir}"
 		zle accept-line
