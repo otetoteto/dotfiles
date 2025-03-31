@@ -16,7 +16,6 @@
       "claude"
       "deepl"
       "displaylink"
-      "ghostty"
       "orbstack"
     ];
 
