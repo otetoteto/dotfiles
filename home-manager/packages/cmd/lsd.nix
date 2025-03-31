@@ -4,7 +4,7 @@
     enable = true;
 
     settings = {
-      ignore-blobs = [
+      ignore-globs = [
         ".git"
         "node_modules"
         ".venv"

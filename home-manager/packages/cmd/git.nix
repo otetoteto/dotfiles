@@ -16,19 +16,21 @@
       co = "commit";
       comend = "commit --amend";
       sw = "switch";
-      st = "status";
+      st = "status --short";
       pl = "pull";
       plc = "!git pull origin $(git rev-parse --abbrev-ref @)";
       ph = "push";
       fh = "fetch";
       rb = "rebase";
       undo = "reset --soft HEAD^";
-      unstage = "restore --staged";
+      unstg = "restore --staged";
       phf = "push --force-with-lease --force-if-includes";
       lt = "log --pretty=format:'%Cgreen[%cd] %Cblue%h %Cred<%cn> %Creset%s' --date=short --decorate --graph --branches --tags --remotes";
       swl = "!git branch --format=\"%(refname:short)\" | fzf --multi --preview '' | xargs git switch";
       rml = "!git branch --format=\"%(refname:short)\" | fzf --multi --preview '' | xargs git branch -D";
-      adl = "!git ls-files -om | fzf --multi --preview '([[ -z \"$(git diff {})\" ]] && bat --style=numbers --color=always {} || git diff {}) | delta --width=$FZF_PREVIEW_COLUMNS' | xargs git add";
+      adl = "!git ls-files -om | fzf --multi --preview '([[ -z \"$(git diff {})\" ]] && bat --style=numbers --color=always --line-range=:500 {} || git diff {}) | delta --width=$FZF_PREVIEW_COLUMNS' | xargs git add";
+      unstgl = "!git diff --cached --name-only | fzf --multi --preview 'git diff --cached {} | delta --width=$FZF_PREVIEW_COLUMNS' | xargs git unstage";
+      alias = "!git config --get-regexp ^alias | sed -e 's/^alias\.//g' | awk '{print $1}' | fzf --preview 'git config --get-regexp ^alias.{}$ | sed -e 's/alias.{}//g' | sed -e \"s/!git/git/g\"' | sh -c 'git $(cat)'";
     };
 
     ignores = [

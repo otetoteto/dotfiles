@@ -4,7 +4,7 @@
     enable = true;
 
     config = {
-      theme = "GitHub";
+      theme = "TwoDark";
     };
   };
 }

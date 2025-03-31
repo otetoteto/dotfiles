@@ -12,6 +12,7 @@
     ./lsd.nix
     ./mise.nix
     ./rust.nix
+    ./tmux.nix
     ./uv.nix
   ];
 }
