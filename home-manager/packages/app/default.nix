@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./alacritty.nix
     ./arc-browser.nix
     ./chatgpt.nix
     ./raycast.nix

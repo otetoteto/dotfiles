@@ -7,9 +7,7 @@
       cleanup = "uninstall";
     };
 
-    brews = [
-      "poppler"
-    ];
+    brews = [ ];
 
     casks = [
       "alt-tab"
