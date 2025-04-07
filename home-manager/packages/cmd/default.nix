@@ -9,6 +9,8 @@
     ./ghq.nix
     ./git.nix
     ./jq.nix
+    ./kind.nix
+    ./kubectl.nix
     ./lsd.nix
     ./mise.nix
     ./rust.nix
