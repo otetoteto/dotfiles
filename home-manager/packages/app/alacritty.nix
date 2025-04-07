@@ -9,6 +9,10 @@
       window = {
         opacity = 0.95;
         startup_mode = "Maximized";
+        padding = {
+          x = 8;
+          y = 0;
+        };
       };
 
       font = {
