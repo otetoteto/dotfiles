@@ -26,11 +26,11 @@
       unstg = "restore --staged";
       phf = "push --force-with-lease --force-if-includes";
       lt = "log --pretty=format:'%Cgreen[%cd] %Cblue%h %Cred<%cn> %Creset%s' --date=short --decorate --graph --branches --tags --remotes";
-      swl = "!git branch --format=\"%(refname:short)\" | fzf-tmux -p 80% --multi --preview '' | xargs git switch";
-      rml = "!git branch --format=\"%(refname:short)\" | fzf-tmux -p 80% --multi --preview '' | xargs git branch -D";
-      adl = "!comm -23 <(git status --short -uall | awk '{print $2}' | sort) <(git diff --cached --name-only | sort) | fzf-tmux -p 80% --multi --preview '([[ -z \"$(git diff {-1})\" ]] && bat --style=numbers --color=always --line-range=:500 {-1} || git diff {-1}) | delta --width=$FZF_PREVIEW_COLUMNS' | awk '{print $NF}' | xargs git add";
-      unstgl = "!git diff --cached --name-only | fzf-tmux -p 80% --multi --preview 'git diff --cached {} | delta --width=$FZF_PREVIEW_COLUMNS' | xargs git unstg";
-      alias = "!git config --get-regexp ^alias | sed -e 's/^alias\.//g' | awk '{print $1}' | fzf-tmux -p 80% --preview 'git config --get-regexp ^alias.{}$ | sed -e 's/alias.{}//g' | sed -e \"s/!git/git/g\"' | sh -c 'git $(cat)'";
+      swl = "!git branch --format=\"%(refname:short)\" | fzf --multi --preview '' | xargs git switch";
+      rml = "!git branch --format=\"%(refname:short)\" | fzf --multi --preview '' | xargs git branch -D";
+      adl = "!comm -23 <(git status --short -uall | awk '{print $2}' | sort) <(git diff --cached --name-only | sort) | fzf --multi --preview '([[ -z \"$(git diff {-1})\" ]] && bat --style=numbers --color=always --line-range=:500 {-1} || git diff {-1}) | delta --width=$FZF_PREVIEW_COLUMNS' | awk '{print $NF}' | xargs git add";
+      unstgl = "!git diff --cached --name-only | fzf --multi --preview 'git diff --cached {} | delta --width=$FZF_PREVIEW_COLUMNS' | xargs git unstg";
+      alias = "!git config --get-regexp ^alias | sed -e 's/^alias\.//g' | awk '{print $1}' | fzf --preview 'git config --get-regexp ^alias.{}$ | sed -e 's/alias.{}//g' | sed -e \"s/!git/git/g\"' | sh -c 'git $(cat)'";
     };
 
     ignores = [

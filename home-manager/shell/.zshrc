@@ -1,12 +1,10 @@
 alias cl='clear'
 alias relogin='exec $SHELL -l'
 alias -g NOERR='2>/dev/null'
-alias fzf='fzf-tmux -p 80%'
 
 export FZF_DEFAULT_OPTS="--height 70% --border --cycle --reverse --inline-info --preview-window=down --preview 'bat --style=numbers --color=always --line-range=:500 {} 2>/dev/null || echo {}'"
-export FZF_TMUX=1
-export FZF_TMUX_OPTS="-p 80%"
 
+export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(sheldon source)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -26,6 +24,12 @@ function move_ghq() {
 		zle accept-line
 	fi
 	zle clear-screen
+}
+
+function fzft() {
+	alias fzf='fzf-tmux -p 80%'
+	export FZF_TMUX=1
+	export FZF_TMUX_OPTS="-p 80%"
 }
 
 zle -N move_ghq
