@@ -11,6 +11,7 @@
     ./jq.nix
     ./kind.nix
     ./kubectl.nix
+    ./lazydocker.nix
     ./lsd.nix
     ./mise.nix
     ./rust.nix

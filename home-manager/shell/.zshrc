@@ -1,6 +1,7 @@
 alias cl='clear'
 alias relogin='exec $SHELL -l'
 alias -g NOERR='2>/dev/null'
+alias lzd='lazydocker'
 
 export FZF_DEFAULT_OPTS="--height 70% --border --cycle --reverse --inline-info --preview-window=down --preview 'bat --style=numbers --color=always --line-range=:500 {} 2>/dev/null || echo {}'"
 
