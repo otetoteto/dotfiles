@@ -13,6 +13,7 @@
       "alt-tab"
       "claude"
       "deepl"
+      "displaylink"
       "orbstack"
     ];
 
