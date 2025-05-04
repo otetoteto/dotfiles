@@ -14,6 +14,7 @@
     ./lazydocker.nix
     ./lsd.nix
     ./mise.nix
+    ./ripgrep.nix
     ./rust.nix
     ./tmux.nix
     ./uv.nix
