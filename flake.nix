@@ -38,7 +38,7 @@
       };
 
       darwinConfigurations = {
-        eto = nix-darwin.lib.darwinSystem {
+        etomacair = nix-darwin.lib.darwinSystem {
           system = system;
           modules = [ ./nix-darwin ];
         };
@@ -55,7 +55,7 @@
               echo "Updating home-manager..."
               nix run nixpkgs#home-manager -- switch --flake .#eto
               echo "Updating nix-darwin..."
-              nix run nix-darwin -- switch --flake .#eto
+              nix run nix-darwin -- switch --flake .#etomacair
               echo "Update complete!"
             ''
           );
@@ -83,7 +83,7 @@
               echo "Updating flake..."
               nix flake update
               echo "Updating nix-darwin..."
-              nix run nix-darwin -- switch --flake .#eto
+              nix run nix-darwin -- switch --flake .#etomacair
               echo "Update complete!"
             ''
           );
