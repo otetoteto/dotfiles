@@ -8,6 +8,7 @@
     };
   };
   system.stateVersion = 6;
+  system.primaryUser = "eto";
 
   system = {
     defaults = {

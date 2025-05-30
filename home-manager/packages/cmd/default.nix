@@ -3,6 +3,7 @@
   imports = [
     ./awscli.nix
     ./bat.nix
+    ./cf-terraforming.nix
     ./deno.nix
     ./fzf.nix
     ./gh.nix
