@@ -33,5 +33,16 @@ function fzft() {
 	export FZF_TMUX_OPTS="-p 80%"
 }
 
+
+function grp() {
+	local folder="${1:-.}"
+	local code_flag="${2:-}"
+	if [[ "$code_flag" == "--code" ]]; then
+		rg --color=always --line-number --with-filename --field-match-separator ' ' . "$folder" | fzf --ansi --preview "bat -p --color=always {1} --highlight-line {2}" | awk '{print $1":"$2}' | xargs code --goto
+	else
+		rg --color=always --line-number --with-filename --field-match-separator ' ' . "$folder" | fzf --ansi --preview "bat -p --color=always {1} --highlight-line {2}" | awk '{print $1}'
+	fi
+}
+
 zle -N move_ghq
 bindkey '^]' move_ghq
