@@ -1,0 +1,127 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入しますauto[]
+[
+    // -------- trigger suggest ------------------------------------------------------------
+    {
+        "key": "alt+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
+    {
+        "key": "cmd+i",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
+    // -------- focus group ------------------------------------------------------------
+    {
+        "key": "ctrl+0",
+        "command": "workbench.action.focusSideBar",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "workbench.action.focusFirstEditorGroup",
+        "when": "sideBarFocus"
+    },
+    // -------- terminal ---------------------------------------------------------------
+    {
+        "key": "ctrl+` ctrl+`",
+        "command": "workbench.action.createTerminalEditor"
+    },
+    {
+        "key": "ctrl+` right",
+        "command": "workbench.action.createTerminalEditorSide"
+    },
+    // -------- group ------------------------------------------------------------------
+    {
+        "key": "ctrl+q h",
+        "command": "workbench.action.focusLeftGroup",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q l",
+        "command": "workbench.action.focusRightGroup",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q j",
+        "command": "workbench.action.focusBelowGroup",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q k",
+        "command": "workbench.action.focusAboveGroup",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q \\",
+        "command": "workbench.action.splitEditor",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q -",
+        "command": "workbench.action.splitEditorOrthogonal",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q left",
+        "command": "workbench.action.increaseViewWidth",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q right",
+        "command": "workbench.action.decreaseViewWidth",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q up",
+        "command": "workbench.action.increaseViewHeight",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q down",
+        "command": "workbench.action.decreaseViewHeight",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q ]",
+        "command": "workbench.action.moveEditorToNextGroup",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+q [",
+        "command": "workbench.action.moveEditorToPreviousGroup",
+        "when": "editorFocus || terminalFocus"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    // ---------- ignore for ghostty ----------------------------------------
+    {
+        "key": "cmd+g",
+        "command": "-workbench.action.terminal.goToRecentDirectory",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "cmd+g",
+        "command": "-workbench.action.terminal.findNext",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+    },
+    {
+        "key": "cmd+g",
+        "command": "-editor.action.nextMatchFindAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\\\r\n"
+        },
+        "when": "terminalFocus"
+    }
+]

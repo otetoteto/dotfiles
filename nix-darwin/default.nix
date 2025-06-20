@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 {
   nix = {
     optimise.automatic = true;
@@ -8,7 +8,7 @@
     };
   };
   system.stateVersion = 6;
-  system.primaryUser = "eto";
+  system.primaryUser = username;
 
   system = {
     defaults = {

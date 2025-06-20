@@ -11,5 +11,8 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 
 ```sh
+# Initial Setup
+export NIX_USER=$(whoami)
+
 nix run .#update
 ```

@@ -1,0 +1,112 @@
+{
+  // --------- editor ------------------------------------------------------------------
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.fontFamily": "'UDEV Gothic 35NFLG', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": "400",
+  "editor.fontSize": 12,
+  "editor.linkedEditing": true,
+  "editor.stickyScroll.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.cursorSmoothCaretAnimation": "on",
+  // --------- files ------------------------------------------------------------------
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  // --------- workbench ------------------------------------------------------------------
+  "workbench.tree.indent": 16,
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.editor.autoLockGroups": {
+    "terminalEditor": false
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  // --------- terminal ------------------------------------------------------------------
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontFamily": "'UDEV Gothic 35NFLG', Consolas, 'Courier New', monospace",
+  "terminal.integrated.fontSize": 12,
+  // --------- git ------------------------------------------------------------------
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "git.ignoreMissingGitWarning": true,
+  "gitlens.defaultDateFormat": null,
+  "git.suggestSmartCommit": false,
+  // --------- liveServer ------------------------------------------------------------------
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  // --------- explorer ------------------------------------------------------------------
+  "explorer.compactFolders": false,
+  "explorer.openEditors.visible": 1,
+  "explorer.confirmDragAndDrop": false,
+  // --------- leetcode ------------------------------------------------------------------
+  "leetcode.hint.commentDescription": false,
+  "leetcode.defaultLanguage": "rust",
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.workspaceFolder": "/Users/eto/.leetcode/src",
+  "leetcode.hint.commandShortcut": false,
+  "leetcode.filePath": {
+    "default": {
+      "folder": "",
+      "filename": "_${id}_${difficulty}_${snake_case_name}.${ext}"
+    }
+  },
+  // --------- go ------------------------------------------------------------------
+  "go.toolsManagement.autoUpdate": true,
+  "go.toolsEnvVars": {
+    "GO111MODULE": "on"
+  },
+  // --------- rust ------------------------------------------------------------------
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  // --------- js/ts ----------------------------------------------------------------
+  "javascript.preferGoToSourceDefinition": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferGoToSourceDefinition": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // --------- haskell ------------------------------------------------------------------
+  "haskell.manageHLS": "GHCup",
+  "haskell.formattingProvider": "fourmolu",
+  "haskell.ghcupExecutablePath": "/opt/homebrew/bin/ghcup",
+  "[haskell]": {
+    "editor.defaultFormatter": "haskell.haskell"
+  },
+  // --------- other --------------------------------------------------------------------
+  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "vsicons.dontShowNewVersionMessage": true,
+  "redhat.telemetry.enabled": true,
+  "yaml.validate": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "workbench.activityBar.location": "top",
+  "githubPullRequests.pullBranch": "never",
+  "markdown-preview-enhanced.enablePreviewZenMode": false,
+  "workbench.colorTheme": "GitHub Dark",
+  "gitlens.rebaseEditor.ordering": "asc",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "cSpell.userWords": [
+    "otetoteto"
+  ]
+}

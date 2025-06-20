@@ -7,6 +7,8 @@ export FZF_DEFAULT_OPTS="--height 70% --border --cycle --reverse --inline-info -
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
+export NIX_USER=$(whoami)
+
 eval "$(sheldon source)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

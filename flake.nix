@@ -22,24 +22,26 @@
     }:
     let
       system = "aarch64-darwin";
+      username = builtins.getEnv "NIX_USER";
       pkgs = import nixpkgs { inherit system; };
     in
     {
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
 
       homeConfigurations = {
-        eto = home-manager.lib.homeManagerConfiguration {
+        home-otetoteto = home-manager.lib.homeManagerConfiguration {
           pkgs = pkgs;
           extraSpecialArgs = {
-            inherit inputs;
+            inherit inputs username;
           };
           modules = [ ./home-manager ];
         };
       };
 
       darwinConfigurations = {
-        etomacair = nix-darwin.lib.darwinSystem {
+        darwin-otetoteto = nix-darwin.lib.darwinSystem {
           system = system;
+          specialArgs = { inherit inputs username; };
           modules = [ ./nix-darwin ];
         };
       };
@@ -53,9 +55,9 @@
               echo "Updating flake..."
               nix flake update
               echo "Updating home-manager..."
-              nix run nixpkgs#home-manager -- switch --flake .#eto
+              nix run nixpkgs#home-manager -- switch --flake .#home-otetoteto --impure
               echo "Updating nix-darwin..."
-              nix run nix-darwin -- switch --flake .#etomacair
+              sudo -E nix run nix-darwin -- switch --flake .#darwin-otetoteto --impure
               echo "Update complete!"
             ''
           );
@@ -69,7 +71,7 @@
               echo "Updating flake..."
               nix flake update
               echo "Updating home-manager..."
-              nix run nixpkgs#home-manager -- switch --flake .#eto
+              nix run nixpkgs#home-manager -- switch --flake .#home-otetoteto --impure
               echo "Update complete!"
             ''
           );
@@ -83,7 +85,7 @@
               echo "Updating flake..."
               nix flake update
               echo "Updating nix-darwin..."
-              nix run nix-darwin -- switch --flake .#etomacair
+              sudo -E nix run nix-darwin -- switch --flake .#darwin-otetoteto --impure
               echo "Update complete!"
             ''
           );

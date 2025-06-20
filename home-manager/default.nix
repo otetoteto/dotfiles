@@ -3,11 +3,9 @@
   lib,
   config,
   pkgs,
+  username,
   ...
 }:
-let
-  username = "eto";
-in
 {
   programs.home-manager.enable = true;
 

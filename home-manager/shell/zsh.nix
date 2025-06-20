@@ -3,7 +3,7 @@
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
-    initExtra = builtins.readFile ./.zshrc;
+    initContent = builtins.readFile ./.zshrc;
     autocd = true;
   };
 

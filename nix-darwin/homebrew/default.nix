@@ -1,13 +1,18 @@
-{ ... }:
+{ username, ... }:
 {
   homebrew = {
     enable = true;
+    user = username;
     onActivation = {
       autoUpdate = true;
       cleanup = "uninstall";
     };
 
-    brews = [ ];
+    taps = [
+      "dagger/tap"
+    ];
+
+    brews = [];
 
     casks = [
       "alt-tab"
@@ -15,6 +20,9 @@
       "deepl"
       "displaylink"
       "orbstack"
+      "raycast"
+      "1password"
+      "dagger/tap/container-use"
     ];
 
     masApps = {
