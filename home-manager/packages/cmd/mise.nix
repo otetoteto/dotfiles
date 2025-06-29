@@ -9,6 +9,7 @@
       tools = {
         node = "lts";
         "npm:@anthropic-ai/claude-code" = "latest";
+        "npm:@google/gemini-cli" = "latest";
       };
     };
   };
