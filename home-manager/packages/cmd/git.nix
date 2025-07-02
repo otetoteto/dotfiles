@@ -22,6 +22,7 @@
       ph = "push";
       fh = "fetch";
       rb = "rebase";
+      wt = "worktree";
       undo = "reset --soft HEAD^";
       unstg = "restore --staged";
       phf = "push --force-with-lease --force-if-includes";
