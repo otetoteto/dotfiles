@@ -46,5 +46,7 @@ function grp() {
 	fi
 }
 
+source ~/.config/zsh/git.zsh
+
 zle -N move_ghq
 bindkey '^]' move_ghq

@@ -8,4 +8,5 @@
   };
 
   home.file.".config/sheldon/plugins.toml".source = ./plugins.toml;
+  home.file.".config/zsh/git.zsh".source = ./git.zsh;
 }
