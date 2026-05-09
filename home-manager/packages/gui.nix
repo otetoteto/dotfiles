@@ -1,6 +1,13 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  programs.alacritty = {
+	home.packages = with pkgs; [
+    gitify
+		ice-bar
+		slack
+		vscode
+  ];
+
+	programs.alacritty = {
     enable = true;
 
     theme = "github_dark_dimmed";

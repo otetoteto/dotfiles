@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./app
-    ./cmd
+    ./cli.nix
+    ./gui.nix
   ];
 }

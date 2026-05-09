@@ -2,13 +2,13 @@
   description = "my nix";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.11-darwin";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:LnL7/nix-darwin/nix-darwin-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -29,7 +29,7 @@
       formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt-rfc-style;
 
       homeConfigurations = {
-        home-otetoteto = home-manager.lib.homeManagerConfiguration {
+        me = home-manager.lib.homeManagerConfiguration {
           pkgs = pkgs;
           extraSpecialArgs = {
             inherit inputs username;
@@ -39,7 +39,7 @@
       };
 
       darwinConfigurations = {
-        darwin-otetoteto = nix-darwin.lib.darwinSystem {
+        me = nix-darwin.lib.darwinSystem {
           system = system;
           specialArgs = { inherit inputs username; };
           modules = [ ./nix-darwin ];
@@ -55,9 +55,9 @@
               echo "Updating flake..."
               nix flake update
               echo "Updating home-manager..."
-              nix run nixpkgs#home-manager -- switch --flake .#home-otetoteto --impure
+              nix run nixpkgs#home-manager -- switch --flake .#me --impure
               echo "Updating nix-darwin..."
-              sudo -E nix run nix-darwin -- switch --flake .#darwin-otetoteto --impure
+              sudo -E nix run nix-darwin -- switch --flake .#me --impure
               echo "Update complete!"
             ''
           );
@@ -71,7 +71,7 @@
               echo "Updating flake..."
               nix flake update
               echo "Updating home-manager..."
-              nix run nixpkgs#home-manager -- switch --flake .#home-otetoteto --impure
+              nix run nixpkgs#home-manager -- switch --flake .#me --impure
               echo "Update complete!"
             ''
           );
@@ -85,7 +85,7 @@
               echo "Updating flake..."
               nix flake update
               echo "Updating nix-darwin..."
-              sudo -E nix run nix-darwin -- switch --flake .#darwin-otetoteto --impure
+              sudo -E nix run nix-darwin -- switch --flake .#me --impure
               echo "Update complete!"
             ''
           );
